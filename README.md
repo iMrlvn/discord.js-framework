@@ -30,7 +30,7 @@ npm install mrlvn.js discord.js
 ## 🚀 Quick Start
 ```js
 const { Client, GatewayIntentBits } = require("discord.js");
-const client = = new Client({
+const client = new Client({
     intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages],
 });
 
