@@ -1,3 +1,5 @@
+import { Client } from "discord.js";
+
 export interface Logger {
     handlers?: boolean;
 }
