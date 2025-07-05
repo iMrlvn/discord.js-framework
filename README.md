@@ -1,8 +1,8 @@
 # mrlvn.js
 A lightweight, modular, and scalable framework built on top of [discord.js](https://discord.js.org) — making your bot development faster and cleaner. So you can focus on featured.
 
-[![CI](https://github.com/iMrlv/mrlvn.js/.github/workflows/ci.yml/badge.svg)](https://github.com/iMrlvn/mrlvn.js/actions)
 [![NPM Version](https://img.shields.io/npm/v/mrlvn.js.svg)](https://www.npmjs.com/package/mrlvn.js)
+[![NPM Downloaded](https://img.shields.io/npm/dt/mrlvn.js.svg)](https://www.npmjs.com/package/mrlvn.js)
 [![License](https://img.shields.io/npm/l/mrlvn.js)](LICENSE)
 [![Node Version](https://img.shields.io/node/v/mrlvn.js)](https://nodejs.org)
 

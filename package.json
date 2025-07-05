@@ -49,6 +49,6 @@
     "discord.js": "^14"
   },
   "engines": {
-    "node": ">=23.x"
+    "node": ">=22.x"
   }
 }
