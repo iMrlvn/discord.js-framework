@@ -13,7 +13,7 @@ export class Framework extends EventEmitter {
         super();
         
         if (!options) {
-            throw ("Framework", new Error("Need options!"));
+            throw new Error("Framework(): Need options!");
         };
         
         this._client = options.client || null;
