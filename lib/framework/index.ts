@@ -17,6 +17,8 @@ export class Framework extends EventEmitter {
     public devUsers: string[];
     
     constructor(options?: FrameworkOptions = {}) {
+        super();
+        
         if (!options) {
             console.log("Framework", new Error("Need options!"));
         };
