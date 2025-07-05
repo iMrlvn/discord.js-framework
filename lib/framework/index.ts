@@ -2,9 +2,9 @@ import EventEmitter from "node:events";
 import { Client } from "discord.js";
 
 export interface FrameworkOptions{
-    client: Client;
-    commandsPath: string;
-    eventsPath: string;
+    client?: Client;
+    commandsPath?: string;
+    eventsPath?: string;
     devGuilds?: string[];
     devUsers?: string[];
 };
