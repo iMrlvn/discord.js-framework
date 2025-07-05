@@ -4,16 +4,16 @@ export interface Options {
     data?: SlashCommandBuilder;
     cooldown?: number;
     private?: boolean;
-    execute?: () => void;
-    autoComplete?: () => void;
+    execute?: any;
+    Automplete?: any;
 }
 
 export class CommandInterface {
     public data: SlashCommandBuilder | null;
     public cooldown: number;
     public private: boolean;
-    public execute: () => undefined;
-    public Autocomplete: () => undefined | null;
+    public execute: any;
+    public Autocomplete: any;
     
     constructor(options: Options={}) {
         this.data = options.data || null;
@@ -23,7 +23,7 @@ export class CommandInterface {
         this.setAutocomplete(options);
     }
     setAutocomplete(options: Options={}) {
-        this.Autocomplete = null;
+        this.Autocomplete = () => void 0;
         if (options.Autocomplete && typeof options.Autocomplete == "function") this.Autocomplete = options.Autocomplete;
         return this;
     }
