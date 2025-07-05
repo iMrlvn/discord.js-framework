@@ -1,5 +1,6 @@
 import { Framework } from "./framework/index";
 
-export {
-    Framework
-}
+export default Framework;
+
+export * from "./Framework";
+export * from "./plugins/CommandBuilder";

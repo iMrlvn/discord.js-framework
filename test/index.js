@@ -1,1 +1,4 @@
-console.log(require("../dist/"));
+const frame = require("../dist/");
+
+console.log(frame);
+console.log(new frame.Framework());

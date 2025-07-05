@@ -1,13 +1,6 @@
 import EventEmitter from "node:events";
 import { Client } from "discord.js";
-
-export interface FrameworkOptions{
-    client?: Client;
-    commandsPath?: string;
-    eventsPath?: string;
-    devGuilds?: string[];
-    devUsers?: string[];
-};
+import { FrameworkOptions } from "./types";
 
 export class Framework extends EventEmitter {
     public _client: Client | null;
@@ -16,11 +9,13 @@ export class Framework extends EventEmitter {
     public devGuilds: string[];
     public devUsers: string[];
     
+    public loadEverything: () => {};
+    
     constructor(options: FrameworkOptions = {}) {
         super();
         
         if (!options) {
-            console.log("Framework", new Error("Need options!"));
+            throw ("Framework", new Error("Need options!"));
         };
         
         this._client = options.client || null;
@@ -28,5 +23,9 @@ export class Framework extends EventEmitter {
         this.eventsPath = options.eventsPath || "./events";
         this.devGuilds = options.devGuilds || [];
         this.devUsers = options.devUsers || [];
+        
+    }
+    async loadEverything() {
+        
     }
 }
