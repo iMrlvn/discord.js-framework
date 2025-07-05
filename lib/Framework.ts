@@ -9,8 +9,6 @@ export class Framework extends EventEmitter {
     public devGuilds: string[];
     public devUsers: string[];
     
-    public loadEverything: () => {};
-    
     constructor(options: FrameworkOptions = {}) {
         super();
         
