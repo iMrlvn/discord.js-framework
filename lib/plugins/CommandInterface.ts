@@ -5,7 +5,7 @@ export interface Options {
     cooldown?: number;
     private?: boolean;
     execute?: any;
-    Automplete?: any;
+    Autocomplete?: any;
 }
 
 export class CommandInterface {
