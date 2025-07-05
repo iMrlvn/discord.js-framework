@@ -25,6 +25,6 @@ export class Framework extends EventEmitter {
         const commands = await import("../handlers/command");
         commands(this.commandsPath, this._client, this);
         const events = await import("../handlers/event");
-        eventd(this.eventsPath, this._client, this);
+        events(this.eventsPath, this._client, this);
     }
 }
