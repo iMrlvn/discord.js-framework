@@ -1,3 +1,4 @@
+import EventEmitter from "node:events";
 import { Client } from "discord.js";
 
 export interface FrameworkOptions{
@@ -8,20 +9,22 @@ export interface FrameworkOptions{
     devUsers?: string[];
 };
 
-export class Framework {
-    private _client!: Client;
-    private commandsPath: string = "";
-    private eventsPath: string = "";
-    private devGuilds: string[] = [];
-    private devUsers: string[] = [];
+export class Framework extends EventEmitter {
+    public _client!: Client;
+    public commandsPath!: string;
+    public eventsPath!: string;
+    public devGuilds: string[];
+    public devUsers: string[];
     
-    constructor(options?: FrameworkOptions) {
-        if (!options) return console.log("Framework", new Error("Need options!"));
+    constructor(options?: FrameworkOptions = {}) {
+        if (!options) {
+            console.log("Framework", new Error("Need options!"));
+        };
         
-        this._client = options.client;
-        this.commandsPath = options.commandsPath;
-        this.eventsPath = options.eventsPath;
-        this.devGuilds = options.devGuilds;
-        this.devUsers = options.devUsers;
+        this._client = options.client || new Client();
+        this.commandsPath = options.commandsPath || "./commands";
+        this.eventsPath = options.eventsPath || "./events";
+        this.devGuilds = options.devGuilds || [];
+        this.devUsers = options.devUsers || [];
     }
 }
