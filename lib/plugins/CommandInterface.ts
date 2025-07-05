@@ -1,14 +1,20 @@
 import { SlashCommandBuilder } from "discord.js";
 
 export interface Options {
-    data?: SlashCommandBuilder | null;
+    data?: SlashCommandBuilder;
     cooldown?: number;
-    private: boolean;
+    private?: boolean;
     execute?: () => {};
     autoComplete?: () => {};
 }
 
 export class CommandInterface {
+    public data: SlashCommandBuilder | null;
+    public cooldown: number;
+    public private: boolean;
+    public execute: () => {};
+    public Autocomplete: () => {};
+    
     constructor(options: Options={}) {
         this.data = options.data || null;
         this.cooldown = options.cooldown || 3000;
