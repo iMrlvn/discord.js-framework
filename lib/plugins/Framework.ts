@@ -1,20 +1,16 @@
 import EventEmitter from "node:events";
 import { Client } from "discord.js";
-import { FrameworkOptions } from "./types";
+import { FrameworkOptions } from "../types";
 
 export class Framework extends EventEmitter {
-    public _client: Client | null;
-    public commandsPath: string;
-    public eventsPath: string;
-    public devGuilds: string[];
-    public devUsers: string[];
+    private _client: Client | null;
+    private commandsPath: string;
+    private eventsPath: string;
+    private devGuilds: string[];
+    private devUsers: string[];
     
     constructor(options: FrameworkOptions = {}) {
         super();
-        
-        if (!options) {
-            throw new Error("Framework(): Need options!");
-        };
         
         this._client = options.client || null;
         this.commandsPath = options.commandsPath || "./commands";

@@ -3,26 +3,32 @@
   "version": "0.0.1",
   "description": "A library that makes it easy to handle commands and events using discord.js",
   "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/index.js",
-      "import": "./dist/index.mjs",
+      "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
-    }
+    },
+    "./*": "./dist/*"
   },
   "scripts": {
-    "dev": "tsup lib/index.ts --format cjs,esm --dts --watch",
-    "build": "tsup lib/index.ts --format cjs,esm --dts",
+    "dev": "tsc -w",
+    "build": "tsc",
     "deploy": "npm publish --access public",
     "deploy-dev": "npm publish --access public --tag dev",
     "test": "node --test"
   },
   "files": [
-    "dist/**/*"
+    "dist"
   ],
-  "keywords": ["discord.js"],
+  "keywords": [
+      "discord.js",
+      "framework",
+      "handlers",
+      "mrlvn.js"
+  ],
   "author": "iMrlvn",
   "license": "MIT",
   "repository": {
@@ -34,10 +40,9 @@
   },
   "homepage": "https://github.com/iMrlvn/mrlvn.js#readme",
   "devDependencies": {
-    "@types/node": "^20.0.0",
-    "discord.js": "^14.20.0",
-    "tsup": "^8.0.0",
-    "typescript": "^5.0.0"
+    "@types/node": "^24.0.10",
+    "discord.js": "^14.21.0",
+    "typescript": "^5.8.3"
   },
   "peerDependencies": {
     "discord.js": "^14"
