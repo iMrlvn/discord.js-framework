@@ -1,0 +1,23 @@
+import { SlashCommandBuilder } from "discord.js";
+
+export interface Options {
+    data?: SlashCommandBuilder | null;
+    cooldown?: number;
+    private: boolean;
+    execute?: () => {};
+    autoComplete?: () => {};
+}
+
+export class CommandInterface {
+    constructor(options: Options={}) {
+        this.data = options.data || null;
+        this.cooldown = options.cooldown || 3000;
+        this.private = options.private || false;
+        this.execute = options.execute || (() => {})!
+        this.setAutocomplete(options);
+    }
+    setAutocomplete(options: Options={}) {
+        if (options.Autocomplete && typeof options.Automplete == "function") this.Autocomplete = options.Autocomplete;
+        return this;
+    }
+}

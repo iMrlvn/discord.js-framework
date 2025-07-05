@@ -3,4 +3,4 @@ import { Framework } from "./Framework";
 export default Framework;
 
 export * from "./Framework";
-export * from "./plugins/CommandBuilder";
+export * from "./plugins/CommandInterface";
