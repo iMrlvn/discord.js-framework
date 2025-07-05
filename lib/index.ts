@@ -1,1 +1,5 @@
-export * from "./framework/index";
+import { Framework } from "./framework/index";
+
+export {
+    Framework
+}
