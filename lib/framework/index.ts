@@ -16,7 +16,7 @@ export class Framework extends EventEmitter {
     public devGuilds: string[];
     public devUsers: string[];
     
-    constructor(options?: FrameworkOptions = {}) {
+    constructor(options: FrameworkOptions = {}) {
         super();
         
         if (!options) {
