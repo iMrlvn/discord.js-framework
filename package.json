@@ -14,8 +14,8 @@
     "./*": "./dist/*"
   },
   "scripts": {
-    "dev": "tsup src/index.ts --dts --format esm,cjs --watch",
-    "build": "tsup src/index.ts --dts --format esm,cjs",
+    "dev": "tsup lib/index.ts --dts --format esm,cjs --watch",
+    "build": "tsup lib/index.ts --dts --format esm,cjs",
     "deploy": "npm publish --access public",
     "deploy-dev": "npm publish --access public --tag dev",
     "test": "node --test"
