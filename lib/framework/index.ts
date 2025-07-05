@@ -15,7 +15,7 @@ export class Framework {
     private devGuilds: string[];
     private devUsers: string[];
     
-    constructor(options: FrameworkOptions) {
+    constructor(options?: FrameworkOptions) {
         if (!options) return console.log("Framework", new Error("Need options!"));
         
         this._client = options.client;
@@ -27,8 +27,7 @@ export class Framework {
         this.loadEverything();
     }
     
-    private async loadEverything() {
+    async loadEverything() {
         // next
-        return this;
     }
 }
