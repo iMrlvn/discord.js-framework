@@ -1,4 +1,4 @@
-import { Framework } from "./framework/index";
+import { Framework } from "./Framework";
 
 export default Framework;
 
