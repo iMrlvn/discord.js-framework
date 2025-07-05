@@ -13,8 +13,8 @@
     }
   },
   "scripts": {
-    "dev": "tsup --watch",
-    "build": "tsup",
+    "dev": "tsup lib/index.ts --format cjs,esm --dts --watch",
+    "build": "tsup lib/index.ts --format cjs,esm --dts",
     "deploy": "npm publish --access public",
     "deploy-dev": "npm publish --access public --tag dev",
     "test": "node --test"
