@@ -1,4 +1,4 @@
-import { Client } from "discord.js";
+import { Client, SlashCommandBuilder } from "discord.js";
 
 export interface Logger {
     handlers?: boolean;
