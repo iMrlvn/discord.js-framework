@@ -2,10 +2,11 @@ console.log(require("../dist"));
 
 const { readdirSync } = require("node:fs");
 
-readdirSync("./lib/plugins")
+readdirSync("./dist/plugins")
+    .filter(f => f.endsWith(".js"))
     .forEach(file => {
         try {
-            const Plugin = require(`../plugins/${file.split(".")[0]}`);
+            const Plugin = require(`../dist/plugins/${file}`);
             console.log(new Plugin());
         } catch(error) {
             console.log(error);
