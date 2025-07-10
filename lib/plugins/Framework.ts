@@ -11,7 +11,7 @@ export class Framework extends EventEmitter {
     private eventsPath: string;
     private devGuilds: string[];
     private devUsers: string[];
-    private logger: Logger;
+    public logger: Logger;
     
     constructor(options: FrameworkOptions = {}) {
         super();
