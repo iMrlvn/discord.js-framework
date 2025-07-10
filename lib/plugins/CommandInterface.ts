@@ -8,16 +8,13 @@ export class CommandInterface {
     public execute: any = function execute() {}; 
     public Autocomplete: any = function Autocomplete() {};
 
-    public constructor(options: CommandInterfaceOptions) {
+    public constructor(options: CommandInterfaceOptions={}) {
 
-        switch(options) {
-            case (options.data): this.data = options.data;
-            case (options.cooldown): this.cooldown = options.cooldown;
-            case (options.private): this.private = options.private;
-            case (options.execute): this.execute = options.execute;
+        for (const keys of Object.keys(options)) {
+            this[keys] = options[keys];
         }
 
-        if (options) this.setAutocomplete(options);
+        this.setAutocomplete(options);
     }
 
     public setAutocomplete(options: CommandInterfaceOptions) {
