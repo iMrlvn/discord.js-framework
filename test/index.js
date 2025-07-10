@@ -2,7 +2,7 @@ console.log(require("../dist"));
 
 const { readdirSync } = require("node:fs");
 
-readdirSync("./plugins")
+readdirSync("./lib/plugins")
     .forEach(file => {
         try {
             const Plugin = require(`../plugins/${file}`);
