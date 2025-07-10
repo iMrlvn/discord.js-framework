@@ -8,7 +8,7 @@ export class CommandInterface {
     public execute: any = function execute() {}; 
     public Autocomplete: any = function Autocomplete() {};
 
-    public constructor(options: CommandInterfaceOptions | CommandInterface) {
+    public constructor(options: CommandInterfaceOptions=CommandInterface) {
 
         this.data = options.data;
         this.cooldown = options.cooldown;
