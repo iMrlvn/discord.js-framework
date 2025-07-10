@@ -6,7 +6,7 @@ import { default as commands } from "../handlers/command";
 import { default as events } from "../handlers/event";
 
 export class Framework extends EventEmitter {
-    private _client: Client | null;
+    private client: Client | null;
     private commandsPath: string;
     private eventsPath: string;
     private devGuilds: string[];
@@ -16,7 +16,7 @@ export class Framework extends EventEmitter {
     constructor(options: FrameworkOptions = {}) {
         super();
         
-        this._client = options.client || null;
+        this.client = options.client || null;
         this.commandsPath = options.commandsPath || "./commands";
         this.eventsPath = options.eventsPath || "./events";
         this.devGuilds = options.devGuilds || [];
@@ -24,7 +24,7 @@ export class Framework extends EventEmitter {
         this.logger = options.logger || { handlers: true };
     }
     async loadEverything() {
-        commands(this.commandsPath, this._client, this);
-        events(this.eventsPath, this._client, this);
+        commands(this.commandsPath, this as Framework);
+        events(this.eventsPath, this as Framework);
     }
 }

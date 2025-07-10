@@ -1,9 +1,9 @@
 import { Client } from "discord.js";
 import { readdir, readdirSync } from "node:fs";
-import { FrameworkOptions } from "../types";
+import { Framework } from "../plugins/Framework";
 
-export default async function(eventsPath: string, client: Client, options: FrameworkOptions={}): Promise<void> {
+export default async function(eventsPath: string, framework: Framework={}): Promise<void> {
     const amount: object[] = [];
-    if (options?.logger!.handlers) console.log("[Handlers]", eventsPath, "opened...");
+    if (framework?.logger!.handlers) console.log("[Handlers]", eventsPath, "opened...");
     console.log("[Handlers]", eventsPath, "files loaded", `${amount.length} events`);
 }
