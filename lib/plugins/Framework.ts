@@ -12,7 +12,7 @@ export class Framework extends EventEmitter {
     public devUsers: string[] = [];
     public logger: Logger = { handlers: true };
 
-    public constructor(options: FrameworkOptions={}) {
+    public constructor(options: FrameworkOptions | Framework) {
         super();
 
         this.client = options.client;

@@ -4,6 +4,6 @@ import { Framework } from "../plugins/Framework";
 
 export default async function(eventsPath: string, framework: Framework): Promise<void> {
     const amount: object[] = [];
-    if (framework?.logger!.handlers) console.log("[Handlers]", eventsPath, "opened...");
+    if (framework?.logger?.handlers) console.log("[Handlers]", eventsPath, "opened...");
     console.log("[Handlers]", eventsPath, "files loaded", `${amount.length} events`);
 }
