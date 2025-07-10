@@ -12,17 +12,19 @@ export class Framework extends EventEmitter {
     public devUsers: string[] = [];
     public logger: Logger = { handlers: true };
 
-    public constructor(options: FrameworkOptions=Framework) {
+    public constructor(options: FrameworkOptions) {
         super();
 
-        this.client = options.client;
-        this.commandsPath = options.commandsPath;
-        this.eventsPath = options.eventsPath;
-        this.devGuilds = options.devGuilds;
-        this.devUsers = options.devUsers;
-        this.logger = options.logger;
+        switch(options) {
+            case (options.client): this.client = options.client;
+            case (options.commandsPath): this.commandsPath = options.commandsPath;
+            case (options.eventsPath): this.eventsPath = options.eventsPath;
+            case (options.devGuilds): this.devGuilds = options.devGuilds;
+            case (options.devUser): this.devUsers = options.devUsers;
+            case (options.logger): this.logger = options.logger;
+        }
 
-        this.loadEverything();
+        if (options) this.loadEverything();
     }
 
     private async loadEverything() {
